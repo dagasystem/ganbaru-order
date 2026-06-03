@@ -39,3 +39,16 @@ window.onload = function(){
   loadFacilities();
 
 };
+
+async function getProduct(code){
+
+  const response =
+    await fetch(
+      API_URL +
+      "?action=product&code=" +
+      encodeURIComponent(code)
+    );
+
+  return await response.json();
+
+}
