@@ -237,8 +237,6 @@ function calcAll(){
 
 async function saveOrder(){
 
-  alert("saveOrder開始");
-
   const items = [];
 
   document
@@ -289,8 +287,6 @@ async function saveOrder(){
 
   });
 
-  alert("② items作成後");
-
   const data = {
 
     facility:
@@ -307,7 +303,6 @@ async function saveOrder(){
 
   };
   
-alert("送信前");
 const query =
   API_URL +
   "?action=saveOrder" +
@@ -320,8 +315,6 @@ const response =
   await fetch(query);
 
   
-  alert("送信後");
-
   const result =
     await response.json();
 
