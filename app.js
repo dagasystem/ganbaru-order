@@ -34,11 +34,13 @@ async function loadFacilities(){
 
 }
 
-window.onload = function(){
+window.onload=function(){
 
   loadFacilities();
 
-};
+  addUser();
+
+}
 
 async function getProduct(code){
 
