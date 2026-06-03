@@ -317,12 +317,13 @@ async function saveOrder(){
         "application/json"
       },
 
-      alert("送信後");
-
       body:
         JSON.stringify(data)
 
     });
+
+  
+  alert("送信後");
 
   const result =
     await response.json();
