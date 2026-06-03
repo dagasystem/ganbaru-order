@@ -1,4 +1,4 @@
-const API_URL = "ここにGASのexec URL";
+const API_URL = "https://script.google.com/macros/s/AKfycbzqYkLCfzlmgMoKTtU96cIQd1mchuxBrImztw6R7SG4tozYsdnS0dWXtITXO189YQEN/exec";
 
 async function loadFacilities(){
 
@@ -33,3 +33,9 @@ async function loadFacilities(){
   });
 
 }
+
+window.onload = function(){
+
+  loadFacilities();
+
+};
