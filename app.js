@@ -306,23 +306,18 @@ async function saveOrder(){
     items:items
 
   };
+  
+alert("送信前");
+const query =
+  API_URL +
+  "?action=saveOrder" +
+  "&data=" +
+  encodeURIComponent(
+    JSON.stringify(data)
+  );
 
-  alert("送信前");
-
-  const response =
-    await fetch(API_URL,{
-
-      method:"POST",
-
-      headers:{
-        "Content-Type":
-        "application/json"
-      },
-
-      body:
-        JSON.stringify(data)
-
-    });
+const response =
+  await fetch(query);
 
   
   alert("送信後");
