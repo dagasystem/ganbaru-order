@@ -289,6 +289,8 @@ async function saveOrder(){
 
   });
 
+  alert("② items作成後");
+
   const data = {
 
     facility:
