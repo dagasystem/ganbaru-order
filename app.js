@@ -234,3 +234,96 @@ function calcAll(){
       "円";
 
 }
+
+async function saveOrder(){
+
+  const items = [];
+
+  document
+  .querySelectorAll(".user-block")
+  .forEach(function(block){
+
+    const userName =
+      block.querySelector(".userName")
+      .value;
+
+    block
+    .querySelectorAll(".item-row")
+    .forEach(function(row){
+
+      const qty =
+        Number(
+          row.querySelector(".qty")
+          .value
+        );
+
+      const price =
+        Number(
+          row.dataset.price
+        );
+
+      items.push({
+
+        userName:userName,
+
+        productNo:
+          row.dataset.productNo,
+
+        productName:
+          row.dataset.productName,
+
+        store:
+          row.dataset.store,
+
+        qty:qty,
+
+        price:price,
+
+        amount:qty*price
+
+      });
+
+    });
+
+  });
+
+  const data = {
+
+    facility:
+      document.getElementById("facility")
+      .value,
+
+    staff:
+      document.getElementById("staff")
+      .value,
+
+    memo:"",
+
+    items:items
+
+  };
+
+  const response =
+    await fetch(API_URL,{
+
+      method:"POST",
+
+      headers:{
+        "Content-Type":
+        "application/json"
+      },
+
+      body:
+        JSON.stringify(data)
+
+    });
+
+  const result =
+    await response.json();
+
+  alert(
+    "登録完了\n" +
+    result.orderId
+  );
+
+}
