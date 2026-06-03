@@ -237,6 +237,8 @@ function calcAll(){
 
 async function saveOrder(){
 
+  alert("saveOrder開始");
+
   const items = [];
 
   document
