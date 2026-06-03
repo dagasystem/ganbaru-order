@@ -1,0 +1,25 @@
+body{
+  font-family:sans-serif;
+  max-width:600px;
+  margin:auto;
+  padding:15px;
+}
+
+h1{
+  text-align:center;
+}
+
+input,
+select,
+button{
+  width:100%;
+  padding:12px;
+  margin-top:5px;
+  margin-bottom:15px;
+  box-sizing:border-box;
+  font-size:16px;
+}
+
+button{
+  cursor:pointer;
+}
