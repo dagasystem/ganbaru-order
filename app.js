@@ -305,6 +305,8 @@ async function saveOrder(){
 
   };
 
+  alert("送信前");
+
   const response =
     await fetch(API_URL,{
 
@@ -314,6 +316,8 @@ async function saveOrder(){
         "Content-Type":
         "application/json"
       },
+
+      alert("送信後");
 
       body:
         JSON.stringify(data)
