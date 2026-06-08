@@ -309,6 +309,13 @@ const response =
     result.orderId
   );
 
+// 担当者名だけ残して初期化
+document.getElementById("facility").selectedIndex = 0;
+document.getElementById("users").innerHTML = "";
+document.getElementById("grandTotal").innerText = "合計 0円";
+
+addUser();
+  
 }
 
 function nextFocus(e){
