@@ -227,7 +227,15 @@ function calcAll(){
           row.dataset.price || 0
         );
 
-      total += qty * price;
+      const amount =
+        qty * price;
+
+      row
+        .querySelector(".amount")
+        .innerText =
+        amount.toLocaleString();
+
+      total += amount;
 
     });
 
@@ -239,6 +247,7 @@ function calcAll(){
       "円";
 
 }
+
 
 async function saveOrder(){
 
