@@ -20,7 +20,9 @@ content="width=device-width,initial-scale=1">
 
 <label>施設名</label>
 
-<select id="facility">
+<select
+id="facility"
+onkeydown="nextFocus(event)">
 
 <option>
 読込中...
@@ -30,7 +32,9 @@ content="width=device-width,initial-scale=1">
 
 <label>担当者名（スタッフ氏名）</label>
 
-<input id="staff">
+<input
+id="staff"
+onkeydown="nextFocus(event)">
 
 <div id="users"></div>
 
