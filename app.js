@@ -61,7 +61,7 @@ function addUser(){
 
   <div class="user-block">
 
-    <label>利用者名</label>
+    <label>ご利用者名</label>
 
     <input class="userName">
 
