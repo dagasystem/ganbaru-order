@@ -63,7 +63,9 @@ function addUser(){
 
     <label>ご利用者名</label>
 
-    <input class="userName">
+    <input
+  class="userName"
+  onkeydown="nextFocus(event)">
 
     <div class="items"></div>
 
@@ -97,17 +99,20 @@ function addItem(btn){
 
     <label>商品コード</label>
 
-    <input
-      class="productNo"
-      onchange="lookupProduct(this)">
+   <input
+  class="productNo"
+  onchange="lookupProduct(this)"
+  onkeydown="nextFocus(event)">
 
     <label>数量</label>
 
     <input
-      type="number"
-      value="1"
-      class="qty"
-      onchange="calcAll()">
+  type="number"
+  inputmode="numeric"
+  value="1"
+  class="qty"
+  onchange="calcAll()"
+  onkeydown="nextFocus(event)">
 
     <div class="product-info">
 
@@ -322,5 +327,35 @@ const response =
     "登録完了\n" +
     result.orderId
   );
+
+}
+
+function nextFocus(e){
+
+  if(e.key !== "Enter"){
+    return;
+  }
+
+  e.preventDefault();
+
+  const elements =
+    Array.from(
+      document.querySelectorAll(
+        'input, select, button'
+      )
+    ).filter(function(el){
+      return !el.disabled &&
+             el.offsetParent !== null;
+    });
+
+  const index =
+    elements.indexOf(e.target);
+
+  if(
+    index >= 0 &&
+    index < elements.length - 1
+  ){
+    elements[index + 1].focus();
+  }
 
 }
