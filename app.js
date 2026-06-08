@@ -187,23 +187,6 @@ async function lookupProduct(input){
 
 function calcRow(row){
 
-  const qty =
-    Number(
-      row.querySelector(".qty").value
-    );
-
-  const price =
-    Number(
-      row.dataset.price || 0
-    );
-
-  const amount =
-    qty * price;
-
-  row.querySelector(".amount")
-    .innerText =
-    amount;
-
   calcAll();
 
 }
@@ -217,34 +200,23 @@ function calcAll(){
     .forEach(function(row){
 
       const qty =
-        Number(
-          row.querySelector(".qty")
-          .value
-        );
+        Number(row.querySelector(".qty").value || 0);
 
       const price =
-        Number(
-          row.dataset.price || 0
-        );
+        Number(row.dataset.price || 0);
 
       const amount =
         qty * price;
 
-      row
-        .querySelector(".amount")
-        .innerText =
+      row.querySelector(".amount").innerText =
         amount.toLocaleString();
 
       total += amount;
 
     });
 
-  document
-    .getElementById("grandTotal")
-    .innerText =
-      "合計 " +
-      total.toLocaleString() +
-      "円";
+  document.getElementById("grandTotal").innerText =
+    "合計 " + total.toLocaleString() + "円";
 
 }
 
